@@ -10,12 +10,16 @@
 # mit gehaltener PITCH-Taste. Jogs zählen rechts herum negativ → invert.
 
 name = "Numark Mixtrack Edge"
+# Bei jeder Änderung hochzählen (Online-Profile ersetzen nur ältere).
+revision = 4
 port = "Mixtrack Edge"
 jog_ticks_per_rev = 600.0
 note = "Am Gerät aufgezeichnet. Tempo: PITCH halten und Jog drehen (mit SHIFT fein). Scratch: FX an + BROWSE."
 audio = "Mixtrack Edge"
 led_on = 0x7F
 led_off = 0x00
+# SYNC blinkt im Takt des laufenden Titels (mit Sync-Lock: dauerhaft an).
+sync_beat_light = true
 
 [[binding]]
 action = "shift"
@@ -220,6 +224,14 @@ kind = "cc"
 channel = 2
 number = 0x0A
 
+# Das Edge hat keinen eigenen MID-Regler: HIGH regelt MID mit.
+[[binding]]
+action = "eq_mid"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x0A
+
 [[binding]]
 action = "eq_low"
 deck = 0
@@ -254,7 +266,6 @@ deck = 0
 kind = "cc"
 channel = 2
 number = 0x27
-invert = true
 
 [[binding]]
 action = "browse"
@@ -455,6 +466,14 @@ kind = "cc"
 channel = 3
 number = 0x0A
 
+# Das Edge hat keinen eigenen MID-Regler: HIGH regelt MID mit.
+[[binding]]
+action = "eq_mid"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x0A
+
 [[binding]]
 action = "eq_low"
 deck = 1
@@ -489,7 +508,6 @@ deck = 1
 kind = "cc"
 channel = 3
 number = 0x27
-invert = true
 
 [[binding]]
 action = "browse"
@@ -522,3 +540,22 @@ kind = "cc"
 channel = 3
 number = 0x29
 invert = true
+
+# Jog-Modus-Tasten (Kanal 1): schalten im Gerät um; hier nur für ihre Lampen.
+[[binding]]
+action = "jog_mode_browse"
+kind = "note"
+channel = 1
+number = 0x24
+
+[[binding]]
+action = "jog_mode_cue_mix"
+kind = "note"
+channel = 1
+number = 0x22
+
+[[binding]]
+action = "jog_mode_pitch"
+kind = "note"
+channel = 1
+number = 0x23
