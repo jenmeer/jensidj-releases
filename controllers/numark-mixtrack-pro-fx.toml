@@ -1,0 +1,472 @@
+# Numark Mixtrack Pro FX
+# Werte aus der Mixxx-Zuordnung "Numark Mixtrack Pro FX.midi.xml" und
+# "Numark-Mixtrack-Pro-FX-scripts.js" (res/controllers im Mixxx-Repository).
+# Noch am Gerät zu prüfen: Richtung des Pitch-Faders (Mixxx liest ihn 14-bit
+# aus CC 0x09 + 0x29; hier nur das MSB 0x09).
+
+name = "Numark Mixtrack Pro FX"
+port = "MixTrack Pro FX"
+# Mixxx: jogScratchSensitivity = 1024 Schritte pro Umdrehung
+jog_ticks_per_rev = 1024.0
+note = "Nach Mixxx-Zuordnung – Pitch-Richtung und FX-Schalter noch prüfen"
+# Mixxx init(): Demo-Lichtshow aus, Pad-Modus "Fader Cuts" freischalten, Status.
+init = [[0xF0, 0x7E, 0x00, 0x06, 0x01, 0xF7], [0xF0, 0x00, 0x20, 0x7F, 0x03, 0xF7], [0xF0, 0x00, 0x20, 0x7F, 0x03, 0x01, 0xF7]]
+# Eigener Audio-Ausgang (Master 1/2, Kopfhörer 3/4), wird automatisch gewählt.
+audio = "Mixtrack Pro FX"
+led_on = 0x7F
+# Mixxx dimmt inaktive Tasten mit 0x01 statt sie auszuschalten.
+led_off = 0x01
+
+[[binding]]
+action = "play"
+deck = 0
+kind = "note"
+channel = 1
+number = 0
+
+[[binding]]
+action = "cue"
+deck = 0
+kind = "note"
+channel = 1
+number = 1
+
+[[binding]]
+action = "sync"
+deck = 0
+kind = "note"
+channel = 1
+number = 2
+
+[[binding]]
+action = "vinyl"
+deck = 0
+kind = "note"
+channel = 1
+number = 7
+
+[[binding]]
+action = "pfl"
+deck = 0
+kind = "note"
+channel = 1
+number = 27
+
+[[binding]]
+action = "jog_turn"
+deck = 0
+kind = "cc"
+channel = 1
+number = 6
+
+[[binding]]
+action = "jog_touch"
+deck = 0
+kind = "note"
+channel = 1
+number = 6
+
+[[binding]]
+action = "pitch"
+deck = 0
+kind = "cc"
+channel = 1
+number = 9
+
+[[binding]]
+action = "gain"
+deck = 0
+kind = "cc"
+channel = 1
+number = 22
+
+[[binding]]
+action = "eq_high"
+deck = 0
+kind = "cc"
+channel = 1
+number = 23
+
+[[binding]]
+action = "eq_mid"
+deck = 0
+kind = "cc"
+channel = 1
+number = 24
+
+[[binding]]
+action = "eq_low"
+deck = 0
+kind = "cc"
+channel = 1
+number = 25
+
+[[binding]]
+action = "filter"
+deck = 0
+kind = "cc"
+channel = 1
+number = 26
+
+[[binding]]
+action = "volume"
+deck = 0
+kind = "cc"
+channel = 1
+number = 28
+
+[[binding]]
+action = "pad1"
+deck = 0
+kind = "note"
+channel = 5
+number = 20
+
+[[binding]]
+action = "pad2"
+deck = 0
+kind = "note"
+channel = 5
+number = 21
+
+[[binding]]
+action = "pad3"
+deck = 0
+kind = "note"
+channel = 5
+number = 22
+
+[[binding]]
+action = "pad4"
+deck = 0
+kind = "note"
+channel = 5
+number = 23
+
+[[binding]]
+action = "pad5"
+deck = 0
+kind = "note"
+channel = 5
+number = 24
+
+[[binding]]
+action = "pad6"
+deck = 0
+kind = "note"
+channel = 5
+number = 25
+
+[[binding]]
+action = "pad7"
+deck = 0
+kind = "note"
+channel = 5
+number = 26
+
+[[binding]]
+action = "pad8"
+deck = 0
+kind = "note"
+channel = 5
+number = 27
+
+[[binding]]
+action = "pad_mode_hot_cue"
+deck = 0
+kind = "note"
+channel = 5
+number = 0
+
+[[binding]]
+action = "pad_mode_loop"
+deck = 0
+kind = "note"
+channel = 5
+number = 13
+
+[[binding]]
+action = "pad_mode_fx"
+deck = 0
+kind = "note"
+channel = 5
+number = 11
+
+[[binding]]
+action = "loop_auto"
+deck = 0
+kind = "note"
+channel = 5
+number = 64
+
+[[binding]]
+action = "loop_half"
+deck = 0
+kind = "note"
+channel = 5
+number = 52
+
+[[binding]]
+action = "loop_double"
+deck = 0
+kind = "note"
+channel = 5
+number = 53
+
+[[binding]]
+action = "load"
+deck = 0
+kind = "note"
+channel = 16
+number = 2
+
+[[binding]]
+action = "play"
+deck = 1
+kind = "note"
+channel = 2
+number = 0
+
+[[binding]]
+action = "cue"
+deck = 1
+kind = "note"
+channel = 2
+number = 1
+
+[[binding]]
+action = "sync"
+deck = 1
+kind = "note"
+channel = 2
+number = 2
+
+[[binding]]
+action = "vinyl"
+deck = 1
+kind = "note"
+channel = 2
+number = 7
+
+[[binding]]
+action = "pfl"
+deck = 1
+kind = "note"
+channel = 2
+number = 27
+
+[[binding]]
+action = "jog_turn"
+deck = 1
+kind = "cc"
+channel = 2
+number = 6
+
+[[binding]]
+action = "jog_touch"
+deck = 1
+kind = "note"
+channel = 2
+number = 6
+
+[[binding]]
+action = "pitch"
+deck = 1
+kind = "cc"
+channel = 2
+number = 9
+
+[[binding]]
+action = "gain"
+deck = 1
+kind = "cc"
+channel = 2
+number = 22
+
+[[binding]]
+action = "eq_high"
+deck = 1
+kind = "cc"
+channel = 2
+number = 23
+
+[[binding]]
+action = "eq_mid"
+deck = 1
+kind = "cc"
+channel = 2
+number = 24
+
+[[binding]]
+action = "eq_low"
+deck = 1
+kind = "cc"
+channel = 2
+number = 25
+
+[[binding]]
+action = "filter"
+deck = 1
+kind = "cc"
+channel = 2
+number = 26
+
+[[binding]]
+action = "volume"
+deck = 1
+kind = "cc"
+channel = 2
+number = 28
+
+[[binding]]
+action = "pad1"
+deck = 1
+kind = "note"
+channel = 6
+number = 20
+
+[[binding]]
+action = "pad2"
+deck = 1
+kind = "note"
+channel = 6
+number = 21
+
+[[binding]]
+action = "pad3"
+deck = 1
+kind = "note"
+channel = 6
+number = 22
+
+[[binding]]
+action = "pad4"
+deck = 1
+kind = "note"
+channel = 6
+number = 23
+
+[[binding]]
+action = "pad5"
+deck = 1
+kind = "note"
+channel = 6
+number = 24
+
+[[binding]]
+action = "pad6"
+deck = 1
+kind = "note"
+channel = 6
+number = 25
+
+[[binding]]
+action = "pad7"
+deck = 1
+kind = "note"
+channel = 6
+number = 26
+
+[[binding]]
+action = "pad8"
+deck = 1
+kind = "note"
+channel = 6
+number = 27
+
+[[binding]]
+action = "pad_mode_hot_cue"
+deck = 1
+kind = "note"
+channel = 6
+number = 0
+
+[[binding]]
+action = "pad_mode_loop"
+deck = 1
+kind = "note"
+channel = 6
+number = 13
+
+[[binding]]
+action = "pad_mode_fx"
+deck = 1
+kind = "note"
+channel = 6
+number = 11
+
+[[binding]]
+action = "loop_auto"
+deck = 1
+kind = "note"
+channel = 6
+number = 64
+
+[[binding]]
+action = "loop_half"
+deck = 1
+kind = "note"
+channel = 6
+number = 52
+
+[[binding]]
+action = "loop_double"
+deck = 1
+kind = "note"
+channel = 6
+number = 53
+
+[[binding]]
+action = "load"
+deck = 1
+kind = "note"
+channel = 16
+number = 3
+
+[[binding]]
+action = "shift"
+kind = "note"
+channel = 1
+number = 32
+
+[[binding]]
+action = "shift"
+kind = "note"
+channel = 2
+number = 32
+
+[[binding]]
+action = "crossfader"
+kind = "cc"
+channel = 16
+number = 8
+
+[[binding]]
+action = "browse"
+kind = "cc"
+channel = 16
+number = 0
+
+[[binding]]
+action = "browse_push"
+kind = "note"
+channel = 16
+number = 7
+
+[[binding]]
+action = "master_volume"
+kind = "cc"
+channel = 15
+number = 35
+
+[[binding]]
+action = "headphone_volume"
+kind = "cc"
+channel = 15
+number = 47
+
+[[binding]]
+action = "cue_mix"
+kind = "cc"
+channel = 15
+number = 39

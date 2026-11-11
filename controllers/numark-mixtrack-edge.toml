@@ -1,0 +1,524 @@
+# Numark Mixtrack Edge
+# Am Gerät aufgezeichnet (MIDI-Monitor, alle Bedienelemente der Reihe nach, 11.11.2026).
+# Kanal 1 = Mitte, Kanal 2 = Deck 1 (links), Kanal 3 = Deck 2 (rechts).
+# SHIFT (Note 0x26) ändert die Codes nicht: die SHIFT-Ebene steht hier als
+# `shift = true`. Die FX-Taste (Note 0x1F, schaltet im Gerät um) und die
+# Jog-Modus-Tasten wechseln die Codes im Gerät selbst: jeder Jog-Modus sendet
+# einen eigenen CC (Cue Mix 0x27, Browse 0x26, Pitch 0x25, Scratch 0x28,
+# Search 0x29); mit FX an senden Sample-Tasten 0x1E/0x1D/0x1C (FX −/+/an) und
+# TREBLE/BASS CC 0x0C/0x0D (Effekt-Regler). Kein Pitch-Fader: Tempo per Jog
+# mit gehaltener PITCH-Taste. Jogs zählen rechts herum negativ → invert.
+
+name = "Numark Mixtrack Edge"
+port = "Mixtrack Edge"
+jog_ticks_per_rev = 600.0
+note = "Am Gerät aufgezeichnet. Tempo: PITCH halten und Jog drehen (mit SHIFT fein). Scratch: FX an + BROWSE."
+audio = "Mixtrack Edge"
+led_on = 0x7F
+led_off = 0x00
+
+[[binding]]
+action = "shift"
+kind = "note"
+channel = 1
+number = 0x26
+
+[[binding]]
+action = "pitch_hold"
+kind = "note"
+channel = 1
+number = 0x23
+
+[[binding]]
+action = "browse_push"
+kind = "note"
+channel = 1
+number = 0x20
+
+[[binding]]
+action = "crossfader"
+kind = "cc"
+channel = 1
+number = 0x01
+
+[[binding]]
+action = "master_volume"
+kind = "cc"
+channel = 1
+number = 0x07
+
+[[binding]]
+action = "headphone_volume"
+kind = "cc"
+channel = 1
+number = 0x09
+
+[[binding]]
+action = "play"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x3B
+
+[[binding]]
+action = "stutter"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x3B
+shift = true
+
+[[binding]]
+action = "cue"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x33
+
+[[binding]]
+action = "sync"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x40
+
+[[binding]]
+action = "keylock"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x40
+shift = true
+
+[[binding]]
+action = "pfl"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x25
+
+[[binding]]
+action = "load"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x25
+shift = true
+
+[[binding]]
+action = "pad1"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2F
+
+[[binding]]
+action = "pad2"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2E
+
+[[binding]]
+action = "pad3"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2D
+
+[[binding]]
+action = "loop_in"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2C
+
+[[binding]]
+action = "loop_half"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2C
+shift = true
+
+[[binding]]
+action = "loop_out"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2B
+
+[[binding]]
+action = "loop_double"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2B
+shift = true
+
+[[binding]]
+action = "reloop"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2A
+
+[[binding]]
+action = "quantize"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x2A
+shift = true
+
+[[binding]]
+action = "sample1"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x29
+
+[[binding]]
+action = "sample2"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x28
+
+[[binding]]
+action = "sample3"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x27
+
+[[binding]]
+action = "fx_prev"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x1E
+
+[[binding]]
+action = "fx_next"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x1D
+
+[[binding]]
+action = "fx1"
+deck = 0
+kind = "note"
+channel = 2
+number = 0x1C
+
+[[binding]]
+action = "eq_high"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x0A
+
+[[binding]]
+action = "eq_low"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x0B
+
+[[binding]]
+action = "fx1_param1"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x0C
+
+[[binding]]
+action = "fx1_param2"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x0D
+
+[[binding]]
+action = "volume"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x08
+
+[[binding]]
+action = "jog_cue_mix"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x27
+invert = true
+
+[[binding]]
+action = "browse"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x26
+invert = true
+
+[[binding]]
+action = "jog_pitch"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x25
+invert = true
+
+[[binding]]
+action = "jog_scratch"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x28
+invert = true
+
+[[binding]]
+action = "jog_search"
+deck = 0
+kind = "cc"
+channel = 2
+number = 0x29
+invert = true
+
+[[binding]]
+action = "play"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x3B
+
+[[binding]]
+action = "stutter"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x3B
+shift = true
+
+[[binding]]
+action = "cue"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x33
+
+[[binding]]
+action = "sync"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x40
+
+[[binding]]
+action = "keylock"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x40
+shift = true
+
+[[binding]]
+action = "pfl"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x25
+
+[[binding]]
+action = "load"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x25
+shift = true
+
+[[binding]]
+action = "pad1"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2F
+
+[[binding]]
+action = "pad2"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2E
+
+[[binding]]
+action = "pad3"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2D
+
+[[binding]]
+action = "loop_in"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2C
+
+[[binding]]
+action = "loop_half"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2C
+shift = true
+
+[[binding]]
+action = "loop_out"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2B
+
+[[binding]]
+action = "loop_double"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2B
+shift = true
+
+[[binding]]
+action = "reloop"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2A
+
+[[binding]]
+action = "quantize"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x2A
+shift = true
+
+[[binding]]
+action = "sample4"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x29
+
+[[binding]]
+action = "sample5"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x28
+
+[[binding]]
+action = "sample6"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x27
+
+[[binding]]
+action = "fx_prev"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x1E
+
+[[binding]]
+action = "fx_next"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x1D
+
+[[binding]]
+action = "fx1"
+deck = 1
+kind = "note"
+channel = 3
+number = 0x1C
+
+[[binding]]
+action = "eq_high"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x0A
+
+[[binding]]
+action = "eq_low"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x0B
+
+[[binding]]
+action = "fx1_param1"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x0C
+
+[[binding]]
+action = "fx1_param2"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x0D
+
+[[binding]]
+action = "volume"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x08
+
+[[binding]]
+action = "jog_cue_mix"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x27
+invert = true
+
+[[binding]]
+action = "browse"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x26
+invert = true
+
+[[binding]]
+action = "jog_pitch"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x25
+invert = true
+
+[[binding]]
+action = "jog_scratch"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x28
+invert = true
+
+[[binding]]
+action = "jog_search"
+deck = 1
+kind = "cc"
+channel = 3
+number = 0x29
+invert = true

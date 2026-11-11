@@ -1,0 +1,502 @@
+# Numark Party Mix III
+# Aufgezeichnet am Gerät (MIDI-Monitor, alle Bedienelemente der Reihe nach),
+# Nummernschema wie Mixxx' Party-Mix-Zuordnung. Beschriftung laut Gerätefoto:
+# MODE (gehalten = SHIFT) Note 0x00 Kanal 5/6, ACAPELLA 0x46 / INSTRUMENTAL 0x48
+# Kanal 1/2, FADE FX Note 0x46 Kanal 16, LEVEL (Kopfhörer) CC 0x0C Kanal 16.
+
+name = "Numark Party Mix III"
+port = "Party Mix"
+jog_ticks_per_rev = 600.0
+note = "Am Gerät aufgezeichnet. ACAPELLA/INSTRUMENTAL wirken ab E7 (Stems)"
+# Beim Verbinden: MIDI Identity Request. Er beendet das Demo-Lauflicht des
+# Party Mix III (am Gerät getestet). Die Numark-SysEx F0 00 01 3F 5C 48 F7 und die
+# "Party-Lichter aus"-CCs (0x40/0x42/0x43) des Party Mix I wirken beim III nicht.
+init = [[0xF0, 0x7E, 0x7F, 0x06, 0x01, 0xF7]]
+# Eigener Audio-Ausgang (Master 1/2, Kopfhörer 3/4), wird automatisch gewählt.
+audio = "Party Mix"
+# Wie in VirtualDJ: alle Lampen mit Funktion leuchten schwach (1), aktive hell (2).
+led_on = 0x02
+# Inaktive Lampen schwach (1).
+led_off = 0x01
+
+[[binding]]
+action = "play"
+deck = 0
+kind = "note"
+channel = 1
+number = 0
+
+[[binding]]
+action = "cue"
+deck = 0
+kind = "note"
+channel = 1
+number = 1
+
+[[binding]]
+action = "sync"
+deck = 0
+kind = "note"
+channel = 1
+number = 2
+
+[[binding]]
+action = "pfl"
+deck = 0
+kind = "note"
+channel = 1
+number = 27
+
+[[binding]]
+action = "load"
+deck = 0
+kind = "note"
+channel = 16
+number = 2
+
+[[binding]]
+action = "pitch"
+deck = 0
+kind = "cc"
+channel = 1
+number = 9
+
+[[binding]]
+action = "jog_turn"
+deck = 0
+kind = "cc"
+channel = 1
+number = 6
+
+[[binding]]
+action = "jog_touch"
+deck = 0
+kind = "note"
+channel = 1
+number = 80
+
+[[binding]]
+action = "volume"
+deck = 0
+kind = "cc"
+channel = 1
+number = 28
+
+[[binding]]
+action = "eq_high"
+deck = 0
+kind = "cc"
+channel = 1
+number = 23
+
+[[binding]]
+action = "eq_mid"
+deck = 0
+kind = "cc"
+channel = 1
+number = 24
+
+[[binding]]
+action = "eq_low"
+deck = 0
+kind = "cc"
+channel = 1
+number = 25
+
+[[binding]]
+action = "filter"
+deck = 0
+kind = "cc"
+channel = 1
+number = 26
+
+[[binding]]
+action = "pad1"
+deck = 0
+kind = "note"
+channel = 5
+number = 20
+
+[[binding]]
+action = "pad2"
+deck = 0
+kind = "note"
+channel = 5
+number = 21
+
+[[binding]]
+action = "pad3"
+deck = 0
+kind = "note"
+channel = 5
+number = 22
+
+[[binding]]
+action = "pad4"
+deck = 0
+kind = "note"
+channel = 5
+number = 23
+
+[[binding]]
+action = "pad5"
+deck = 0
+kind = "note"
+channel = 5
+number = 24
+
+[[binding]]
+action = "pad6"
+deck = 0
+kind = "note"
+channel = 5
+number = 25
+
+[[binding]]
+action = "pad7"
+deck = 0
+kind = "note"
+channel = 5
+number = 26
+
+[[binding]]
+action = "pad8"
+deck = 0
+kind = "note"
+channel = 5
+number = 27
+
+[[binding]]
+action = "pad_mode_next"
+deck = 0
+kind = "note"
+channel = 5
+number = 0
+
+[[binding]]
+action = "play"
+deck = 1
+kind = "note"
+channel = 2
+number = 0
+
+[[binding]]
+action = "cue"
+deck = 1
+kind = "note"
+channel = 2
+number = 1
+
+[[binding]]
+action = "sync"
+deck = 1
+kind = "note"
+channel = 2
+number = 2
+
+[[binding]]
+action = "pfl"
+deck = 1
+kind = "note"
+channel = 2
+number = 27
+
+[[binding]]
+action = "load"
+deck = 1
+kind = "note"
+channel = 16
+number = 3
+
+[[binding]]
+action = "pitch"
+deck = 1
+kind = "cc"
+channel = 2
+number = 9
+
+[[binding]]
+action = "jog_turn"
+deck = 1
+kind = "cc"
+channel = 2
+number = 6
+
+[[binding]]
+action = "jog_touch"
+deck = 1
+kind = "note"
+channel = 2
+number = 80
+
+[[binding]]
+action = "volume"
+deck = 1
+kind = "cc"
+channel = 2
+number = 28
+
+[[binding]]
+action = "eq_high"
+deck = 1
+kind = "cc"
+channel = 2
+number = 23
+
+[[binding]]
+action = "eq_mid"
+deck = 1
+kind = "cc"
+channel = 2
+number = 24
+
+[[binding]]
+action = "eq_low"
+deck = 1
+kind = "cc"
+channel = 2
+number = 25
+
+[[binding]]
+action = "filter"
+deck = 1
+kind = "cc"
+channel = 2
+number = 26
+
+[[binding]]
+action = "pad1"
+deck = 1
+kind = "note"
+channel = 6
+number = 20
+
+[[binding]]
+action = "pad2"
+deck = 1
+kind = "note"
+channel = 6
+number = 21
+
+[[binding]]
+action = "pad3"
+deck = 1
+kind = "note"
+channel = 6
+number = 22
+
+[[binding]]
+action = "pad4"
+deck = 1
+kind = "note"
+channel = 6
+number = 23
+
+[[binding]]
+action = "pad5"
+deck = 1
+kind = "note"
+channel = 6
+number = 24
+
+[[binding]]
+action = "pad6"
+deck = 1
+kind = "note"
+channel = 6
+number = 25
+
+[[binding]]
+action = "pad7"
+deck = 1
+kind = "note"
+channel = 6
+number = 26
+
+[[binding]]
+action = "pad8"
+deck = 1
+kind = "note"
+channel = 6
+number = 27
+
+[[binding]]
+action = "pad_mode_next"
+deck = 1
+kind = "note"
+channel = 6
+number = 0
+
+[[binding]]
+action = "crossfader"
+kind = "cc"
+channel = 16
+number = 8
+
+[[binding]]
+action = "browse"
+kind = "cc"
+channel = 16
+number = 0
+
+[[binding]]
+action = "browse_push"
+kind = "note"
+channel = 16
+number = 7
+
+[[binding]]
+action = "master_volume"
+kind = "cc"
+channel = 16
+number = 10
+
+[[binding]]
+action = "acapella"
+deck = 0
+kind = "note"
+channel = 1
+number = 70
+
+[[binding]]
+action = "instrumental"
+deck = 0
+kind = "note"
+channel = 1
+number = 72
+
+[[binding]]
+action = "acapella"
+deck = 1
+kind = "note"
+channel = 2
+number = 70
+
+[[binding]]
+action = "instrumental"
+deck = 1
+kind = "note"
+channel = 2
+number = 72
+
+[[binding]]
+action = "fade_fx"
+kind = "note"
+channel = 16
+number = 70
+
+[[binding]]
+action = "headphone_volume"
+kind = "cc"
+channel = 16
+number = 12
+
+# Anzeige-LEDs (mit dem LED-Sucher am Gerät ermittelt). FX = LOOPS + SAMPLE zusammen.
+
+[[led]]
+what = "mode_hot_cue"
+deck = 0
+kind = "note"
+channel = 5
+number = 1
+
+[[led]]
+what = "mode_loop"
+deck = 0
+kind = "note"
+channel = 5
+number = 2
+
+[[led]]
+what = "mode_sample"
+deck = 0
+kind = "note"
+channel = 5
+number = 3
+
+[[led]]
+what = "mode_stems"
+deck = 0
+kind = "note"
+channel = 5
+number = 4
+
+[[led]]
+what = "beat_fwd"
+deck = 0
+kind = "note"
+channel = 1
+number = 46
+
+[[led]]
+what = "beat_sync"
+deck = 0
+kind = "note"
+channel = 1
+number = 47
+
+[[led]]
+what = "beat_rev"
+deck = 0
+kind = "note"
+channel = 1
+number = 48
+
+[[led]]
+what = "mode_hot_cue"
+deck = 1
+kind = "note"
+channel = 6
+number = 1
+
+[[led]]
+what = "mode_loop"
+deck = 1
+kind = "note"
+channel = 6
+number = 2
+
+[[led]]
+what = "mode_sample"
+deck = 1
+kind = "note"
+channel = 6
+number = 3
+
+[[led]]
+what = "mode_stems"
+deck = 1
+kind = "note"
+channel = 6
+number = 4
+
+[[led]]
+what = "beat_fwd"
+deck = 1
+kind = "note"
+channel = 2
+number = 46
+
+[[led]]
+what = "beat_sync"
+deck = 1
+kind = "note"
+channel = 2
+number = 47
+
+[[led]]
+what = "beat_rev"
+deck = 1
+kind = "note"
+channel = 2
+number = 48
+
+# Party-Lichter (Lichtshow oben am Gerät): Licht-Modus hinten am Gerät auf
+# Software-Steuerung stellen. Die MIDI-Nummern sind noch nicht ermittelt –
+# mit dem LED-Sucher (🎛 Controller) suchen und dann hier eintragen, z. B.:
+# [[led]]
+# what = "party_red"
+# kind = "note"
+# channel = ?
+# number = ?
+# (dazu party_green und party_blue)
