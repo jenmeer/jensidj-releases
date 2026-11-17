@@ -7,11 +7,12 @@
 # einen eigenen CC (Cue Mix 0x27, Browse 0x26, Pitch 0x25, Scratch 0x28,
 # Search 0x29); mit FX an senden Sample-Tasten 0x1E/0x1D/0x1C (FX −/+/an) und
 # TREBLE/BASS CC 0x0C/0x0D (Effekt-Regler). Kein Pitch-Fader: Tempo per Jog
-# mit gehaltener PITCH-Taste. Jogs zählen rechts herum negativ → invert.
+# mit gehaltener PITCH-Taste. Jogs: Richtung so, wie das Gerät sendet (kein invert; Fix 17.11.2026 –
+# mit invert liefen Scratch/Suchen/Pitch verkehrt herum).
 
 name = "Numark Mixtrack Edge"
 # Bei jeder Änderung hochzählen (Online-Profile ersetzen nur ältere).
-revision = 4
+revision = 5
 port = "Mixtrack Edge"
 jog_ticks_per_rev = 600.0
 note = "Am Gerät aufgezeichnet. Tempo: PITCH halten und Jog drehen (mit SHIFT fein). Scratch: FX an + BROWSE."
@@ -281,7 +282,6 @@ deck = 0
 kind = "cc"
 channel = 2
 number = 0x25
-invert = true
 
 [[binding]]
 action = "jog_scratch"
@@ -289,7 +289,6 @@ deck = 0
 kind = "cc"
 channel = 2
 number = 0x28
-invert = true
 
 [[binding]]
 action = "jog_search"
@@ -297,7 +296,6 @@ deck = 0
 kind = "cc"
 channel = 2
 number = 0x29
-invert = true
 
 [[binding]]
 action = "play"
@@ -523,7 +521,6 @@ deck = 1
 kind = "cc"
 channel = 3
 number = 0x25
-invert = true
 
 [[binding]]
 action = "jog_scratch"
@@ -531,7 +528,6 @@ deck = 1
 kind = "cc"
 channel = 3
 number = 0x28
-invert = true
 
 [[binding]]
 action = "jog_search"
@@ -539,7 +535,6 @@ deck = 1
 kind = "cc"
 channel = 3
 number = 0x29
-invert = true
 
 # Jog-Modus-Tasten (Kanal 1): schalten im Gerät um; hier nur für ihre Lampen.
 [[binding]]
